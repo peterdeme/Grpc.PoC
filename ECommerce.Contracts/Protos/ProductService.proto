@@ -1,0 +1,30 @@
+﻿syntax = "proto3";
+package ECommerce.Contracts;
+
+service ProductService {
+	rpc GetProductsByFamily(GetProductsByFamilyRequest) returns (GetProductsResponse) {};
+	rpc GetProducts (Empty) returns (GetProductsResponse) {};
+}
+
+message GetProductsByFamilyRequest {
+	ProductFamily ProductFamily = 1;
+}
+
+message GetProductsResponse {
+	repeated Product Products = 1;	
+}
+
+message Product {
+	int64 ProductId = 1;
+	string ProductName = 2;
+	repeated Product AddOns = 3;
+}
+
+message Empty {
+}
+
+enum ProductFamily {
+	CollaborationTool = 0;
+    ConferenceCall = 1;
+    ScreenSharing = 2;
+}

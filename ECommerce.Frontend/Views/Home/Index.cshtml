@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<h1>Welcome to an ECommerce system built on ASP.NET Core and gRPC</h1>
+
+<div>
+    @using (Html.BeginForm("GetUserAsync", "Home"))
+    {
+        <input type="text" name="id" />
+        <input type="submit" />
+    }
+
+</div>
+

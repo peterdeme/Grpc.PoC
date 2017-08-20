@@ -1,0 +1,22 @@
+﻿syntax = "proto3";
+package ECommerce.Contracts;
+
+service UserService {
+	rpc GetUserById(GetUserRequest) returns (GetUserResponse) {}
+}
+
+message GetUserRequest {
+  int64 UserId = 1;
+}
+
+message GetUserResponse {
+	bool IsFound = 1;
+	int64 UserId = 2;
+	string FirstName = 3;
+	string LastName = 4;
+	Timestamp DateOfBirth = 5;	
+}
+
+message Timestamp {
+  int64 Epoch = 1;
+}
